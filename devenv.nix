@@ -17,8 +17,10 @@
     pkgs.curl
     pkgs.wget
     pkgs.gcc12
+  ] ++ lib.optionals (pkgs.stdenv.isx86_64) [
     pkgs.numactl
   ];
+  
   enterShell = ''
     git --version
 
@@ -36,7 +38,6 @@
   git-hooks.hooks = {
     nixpkgs-fmt.enable = true;
   };
-
 
   env = {
     DATA_DIR = ".open-webui";
