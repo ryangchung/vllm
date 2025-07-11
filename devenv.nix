@@ -97,6 +97,7 @@ triton==3.2.0; platform_machine == "x86_64" # Triton is required for torch 2.6+c
     pkgs.curl
     pkgs.wget
     pkgs.gcc12
+    pkgs.ollama
   ] ++ lib.optionals (pkgs.stdenv.isx86_64) [
     pkgs.numactl
   ];
@@ -118,6 +119,7 @@ triton==3.2.0; platform_machine == "x86_64" # Triton is required for torch 2.6+c
   processes = {
       open-webui.exec = "uvx --python 3.11 open-webui@latest serve";
       vllm-serve-qwen.exec = "vllm serve qwen/Qwen1.5-0.5B-Chat";
+      ollama-serve.exec = "ollama serve";
   };
 
   git-hooks.hooks = {
