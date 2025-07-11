@@ -203,3 +203,7 @@ shellcheck*/
 
 # Ignore moe/marlin_moe gen code
 csrc/moe/marlin_moe_wna16/kernel_*
+.devenv
+.devenv.flake.nix
+.open-webui
+.webui_secret_key
